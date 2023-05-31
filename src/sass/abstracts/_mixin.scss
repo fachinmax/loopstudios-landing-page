@@ -1,0 +1,33 @@
+@mixin flow-vertical($flow-space) {
+    & > * + * {
+        margin-block-start: $flow-space;
+    }
+}
+
+@mixin flow-horizontal($flow-space) {
+    & > * + * {
+        margin-inline-start: $flow-space;
+    }
+}
+
+@mixin underline {
+    & {
+        position: relative;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0%;
+        border-block-end: 2px solid var(--color-white);
+        border-radius: 2px;
+        margin-block-start: 5px;
+        transition: width .25s ease-in-out;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}

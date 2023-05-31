@@ -1,0 +1,48 @@
+@use '../abstracts/breakpoints';
+
+
+.button--menubar {
+    display: none;
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        display: block;
+        z-index: 10;
+        width: 2rem;
+        aspect-ratio: 1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        color: var(--color-white);
+
+        &[aria-pressed=false] {
+            background-image: url('../images/icon-hamburger.svg');
+        }
+
+        &[aria-pressed=true] {
+            position: fixed;
+            top: 0;
+            right: 0;
+            margin-inline-end: 2rem;
+            margin-block-start: 4rem;
+            background-image: url('../images/icon-close.svg');
+        }
+    }
+}
+
+.creations__button {
+    border: 1px solid var(--color-black);
+    padding: .7em 2em;
+    width: fit-content;
+    text-transform: uppercase;
+    transition: all .25s ease-in-out;
+    @media (min-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        grid-area: button;
+        margin-inline-start: auto;
+        margin-block-start: auto;
+    }
+    &:hover {
+        color: var(--color-white);
+        background-color: var(--color-black);
+        border-color: var(--color-black);
+    }
+}

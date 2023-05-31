@@ -1,0 +1,56 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixin';
+
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem;
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .#{&}-left, .#{&}-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    
+    .#{&}-right {
+        @include mixin.flow-vertical(1.5rem);
+        & > nav > ul {
+            @include mixin.flow-horizontal(2rem);
+        }
+        @media (min-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+            align-items: flex-end;
+        }
+    }
+
+    .#{&}-left {
+        @include mixin.flow-vertical(1rem);
+        & > nav > ul {
+            @include mixin.flow-horizontal(1rem);
+        }
+        @media (min-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+            align-items: flex-start;
+        }
+        @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+            align-items: center;
+            nav, ul {
+                display: flex;
+                text-align: center;
+                flex-direction: column;
+                align-items: center;
+            }
+            nav > ul {
+                @include mixin.flow-horizontal(0);
+                @include mixin.flow-vertical(3rem);
+            }
+        }
+    }
+}

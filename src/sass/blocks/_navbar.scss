@@ -1,0 +1,22 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/typography';
+
+
+.nav--header {
+
+    & a {
+        color: var(--color-white);
+    }
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        & * {
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            font-family: typography.$font-family-josefin;
+        }
+
+        &[data-visual=true] {
+            background-color: var(--color-black);
+        }
+    }
+}

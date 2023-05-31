@@ -1,0 +1,23 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixin';
+
+
+.main-post {
+    @include mixin.flow-vertical(3rem);
+    position: relative;
+
+    &__container {
+        @include mixin.flow-vertical(1rem);
+    }
+
+    @media (min-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        display: flex;
+        @include mixin.flow-vertical(0);
+
+        &__container {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}

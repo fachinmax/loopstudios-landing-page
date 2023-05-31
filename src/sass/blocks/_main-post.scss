@@ -1,0 +1,26 @@
+@use '../abstracts/breakpoints';
+
+
+.main-post {
+
+    &__text {
+        color: var(--color-very-dark-gray);
+    }
+
+    &__image > img  {
+        width: 100%;
+    }
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        text-align: center;
+    }
+
+    @media (min-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        &__container {
+            max-width: 650px;
+            max-width: 51ch;
+            background-color: var(--color-white);
+            padding: var(--space-3xs-xl) 0 0 var(--space-3xs-xl);
+        }
+    }
+}

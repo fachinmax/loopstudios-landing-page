@@ -1,0 +1,13 @@
+footer {
+    a {
+        color: var(--color-white);
+    }
+
+    .#{&}-right > nav > ul > li {
+        scale: 1.5;
+    }
+
+    .#{&}-right {
+        color: var(--color-dark-gray);
+    }
+}

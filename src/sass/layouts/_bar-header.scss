@@ -1,0 +1,11 @@
+@use '../abstracts/breakpoints';
+
+
+.bar-header {
+    display: flex;
+    justify-content: space-between;
+    
+    // & .logo {
+    //     z-index: 5;
+    // }
+}

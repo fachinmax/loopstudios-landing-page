@@ -1,0 +1,11 @@
+.hero__title {
+    font-size: var(--step-5);
+    color: var(--color-white);
+    max-width: 14ch;
+    width: fit-content;
+    padding: var(--space-m-l);
+    border: 1px solid var(--color-white);
+    margin-top: 3rem;
+    transform: translateY(50%);
+
+}

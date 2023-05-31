@@ -1,0 +1,24 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixin';
+
+
+.creations {
+    @include mixin.flow-vertical(3rem);
+
+    &__all {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        gap: 1.5rem;
+    }
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        text-align: center;
+    }
+
+    @media (min-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        display: grid;
+        grid-template-areas:
+        'title button'
+        'card card';
+    }
+}

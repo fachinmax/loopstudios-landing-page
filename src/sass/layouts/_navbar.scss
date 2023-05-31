@@ -1,0 +1,38 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/typography';
+@use '../abstracts/mixin';
+
+
+.nav--header {
+    & ul {
+        @include mixin.flow-horizontal(2rem);
+    }
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        position: fixed;
+        inset: 0;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        & > ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-inline-start: 2rem;
+            @include mixin.flow-vertical(2rem);
+            @include mixin.flow-horizontal(0);
+        }
+        
+        &[data-visual=true] {
+            transform: translateX(0%);
+            background-color: var(--color-black);
+        }
+
+        &[data-visual=false] {
+            transform: translateX(100%);
+            transition: transform .25s ease-in-out;
+        }
+    }
+}

@@ -1,0 +1,114 @@
+@use '../abstracts/breakpoints';
+
+
+.creations {
+    margin-block-start: 5rem;
+
+    @media (min-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        &__title {
+            grid-area: title;
+        }
+        &__all {
+            grid-area: card;
+        }
+    }
+}
+
+.card {
+    isolation: isolate;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-white);
+    padding: 2rem;
+    height: 500px;
+    transition: all .25s ease-in-out;
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: hsla(0, 0%, 100%, 0);
+        transition: background-color .25s ease-in-out;
+    }
+
+    &:hover {
+        color: var(--color-black);
+        scale: .98;
+    }
+
+    &:hover::after {
+        background-color: hsla(0, 0%, 100%, .5);
+    }
+
+    
+    &__title {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        z-index: 5;
+    }
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        height: 200px;
+        text-align: left;
+    }
+}
+
+.card:nth-child(1) {
+    background-image: url('../images/desktop/image-deep-earth.jpg');
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        background-image: url('../images/mobile/image-deep-earth.jpg');
+    }
+}
+.card:nth-child(2) {
+    background-image: url('../images/desktop/image-night-arcade.jpg');
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        background-image: url('../images/mobile/image-night-arcade.jpg');
+    }
+}
+.card:nth-child(3) {
+    background-image: url('../images/desktop/image-soccer-team.jpg');
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        background-image: url('../images/mobile/image-soccer-team.jpg');
+    }
+}
+.card:nth-child(4) {
+    background-image: url('../images/desktop/image-grid.jpg');
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        background-image: url('../images/mobile/image-grid.jpg');
+    }
+}
+.card:nth-child(5) {
+    background-image: url('../images/desktop/image-from-above.jpg');
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        background-image: url('../images/mobile/image-from-above.jpg');
+    }
+}
+.card:nth-child(6) {
+    background-image: url('../images/desktop/image-pocket-borealis.jpg');
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        background-image: url('../images/mobile/image-pocket-borealis.jpg');
+    }
+}
+.card:nth-child(7) {
+    background-image: url('../images/desktop/image-curiosity.jpg');
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        background-image: url('../images/mobile/image-curiosity.jpg');
+    }
+}
+.card:nth-child(8) {
+    background-image: url('../images/desktop/image-fisheye.jpg');
+
+    @media (max-width: map-get(breakpoints.$breakpoints, 'tablet')) {
+        background-image: url('../images/mobile/image-fisheye.jpg');
+    }
+}
