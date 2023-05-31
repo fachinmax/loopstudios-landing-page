@@ -1,0 +1,2 @@
+const e=document.querySelector("#menubar-button"),t=document.querySelector("#header-nav"),a=document.querySelector(".logo");e.addEventListener("click",e=>{let r=e.target;"false"===r.getAttribute("aria-pressed")?(r.setAttribute("aria-pressed","true"),r.setAttribute("aria-expanded","true"),t.setAttribute("data-visual","true"),a.classList.toggle("position-fixed")):(r.setAttribute("aria-pressed","false"),r.setAttribute("aria-expanded","false"),t.setAttribute("data-visual","false"),a.classList.toggle("position-fixed"))});
+//# sourceMappingURL=index.f53c50ac.js.map
